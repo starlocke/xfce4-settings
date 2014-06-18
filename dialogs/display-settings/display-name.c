@@ -252,7 +252,7 @@ find_vendor (const char *code)
 };
 
 char *
-make_display_name (const MonitorInfo *info)
+make_display_name (const MonitorInfo *info, guint output)
 {
     const char *vendor;
     int width_mm, height_mm, inches;
@@ -297,7 +297,7 @@ make_display_name (const MonitorInfo *info)
     }
 
     if (inches > 0)
-	return g_strdup_printf ("%s %d\"", vendor, inches);
+	return g_strdup_printf ("%i:%s %d\"", output, vendor, inches);
     else
-	return g_strdup (vendor);
+	return g_strdup_printf ("%i:%s ", output, vendor);
 }

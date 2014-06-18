@@ -24,6 +24,8 @@
 /* Downloaded from <http://git.gnome.org/browse/gnome-desktop/tree/libgnome-desktop>
    (git commit 42452cada8cf1c4d7a81aded0a3ddbb5e97441de) */
 
+#include <glib.h>
+
 #ifndef EDID_H
 #define EDID_H
 
@@ -191,6 +193,6 @@ struct MonitorInfo
 };
 
 MonitorInfo *decode_edid (const uchar *data);
-char *make_display_name (const MonitorInfo *info);
+char *make_display_name (const MonitorInfo *info, guint output);
 
 #endif

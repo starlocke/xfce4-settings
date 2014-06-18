@@ -633,7 +633,7 @@ xfce_randr_friendly_name (XfceRandr *randr,
         info = decode_edid (edid_data);
 
     if (info)
-        friendly_name = make_display_name (info);
+        friendly_name = make_display_name (info, output);
 
     g_free (info);
     g_free (edid_data);
